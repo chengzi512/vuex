@@ -1,0 +1,41 @@
+// Prefix
+@css-prefix             : xc-;
+// Z-index
+@zindex-loading-bar     : 2000;
+// Animation
+@transition-time        : .2s;
+// Color
+@primary-color          : #2d8cf0;
+@info-color             : #2db7f5;
+@success-color          : #19be6b;
+@warning-color          : #ff9900;
+@error-color            : #ed3f14;
+@link-color             : #2D8cF0;
+@link-hover-color       : tint(@link-color, 20%);
+@link-active-color      : shade(@link-color, 5%);
+@selected-color         : fade(@primary-color, 90%);
+@tooltip-color          : #fff;
+@subsidiary-color       : #80848f;
+@rate-star-color        : #f5a623;
+@loading-bar-prefix-cls: ~"@{css-prefix}loading-bar";
+
+.@{loading-bar-prefix-cls} {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: @zindex-loading-bar;
+
+  &-inner {
+    transition: width @transition-time linear;
+
+    &-color-primary {
+      background-color: @primary-color;
+    }
+
+    &-failed-color-error {
+      background-color: @error-color;
+    }
+  }
+}
